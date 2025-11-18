@@ -1,0 +1,137 @@
+# Getting Started
+
+Bem-vindo ao **Design System**! Este guia vai ajudá-lo a começar rapidamente.
+
+## 📦 Instalação
+
+### Pré-requisitos
+
+- Node.js 18+
+- npm, yarn ou pnpm
+
+### Instalar Dependências
+
+```bash
+npm install
+```
+
+## 🚀 Primeiros Passos
+
+### 1. Desenvolvimento Local
+
+Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+Acesse `http://localhost:5173` para ver a aplicação demo.
+
+### 2. Visualizar Documentação
+
+Inicie o Storybook:
+
+```bash
+npm run storybook
+```
+
+Acesse `http://localhost:6006` para explorar todos os componentes.
+
+### 3. Rodar Testes
+
+```bash
+# Testes em watch mode
+npm run test
+
+# UI interativa
+npm run test:ui
+
+# Com coverage
+npm run test:coverage
+```
+
+## 🎨 Usando Componentes
+
+### Importar um Componente
+
+```tsx
+import { Button } from '@/components/ui/button'
+
+export default function MyComponent() {
+  return <Button>Click me</Button>
+}
+```
+
+### Exemplo Completo
+
+```tsx
+import { Button } from '@/components/ui/button'
+import { Mail } from 'lucide-react'
+
+export default function ContactForm() {
+  const handleSubmit = () => {
+    console.log('Submitting...')
+  }
+
+  return (
+    <div className="space-y-4">
+      <h2 className="text-2xl font-bold">Contact Us</h2>
+
+      <div className="flex gap-4">
+        <Button variant="outline">Cancel</Button>
+        <Button onClick={handleSubmit}>
+          <Mail className="h-4 w-4" />
+          Send Message
+        </Button>
+      </div>
+    </div>
+  )
+}
+```
+
+## 🎨 Temas
+
+### Alternar Entre Light/Dark Mode
+
+```tsx
+// Adicionar classe dark no elemento raiz
+document.documentElement.classList.toggle('dark')
+
+// Exemplo com React
+const [isDark, setIsDark] = useState(false)
+
+const toggleTheme = () => {
+  setIsDark(!isDark)
+  document.documentElement.classList.toggle('dark')
+}
+```
+
+### Personalizar Cores do Tema
+
+Edite `src/styles/globals.css`:
+
+```css
+:root {
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  /* ... outras cores */
+}
+
+.dark {
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  /* ... outras cores */
+}
+```
+
+## 📚 Próximos Passos
+
+- Explore o [Storybook](http://localhost:6006) para ver todos os componentes
+- Leia sobre [Design Tokens](/docs/design-tokens)
+- Aprenda sobre [Acessibilidade](/docs/accessibility)
+- Veja [Exemplos de Uso](/docs/examples)
+
+## 🆘 Precisa de Ajuda?
+
+- Verifique a [Documentação Completa](/docs)
+- Abra uma [Issue](https://github.com/seu-usuario/design-system/issues)
